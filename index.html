@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login/Register Section -->
+        <div id="auth-section">
+            <h1>Anime Tracker</h1>
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username">
+                <input type="password" id="login-password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+            </div>
+            <div id="register-form" style="display: none;">
+                <h2>Register</h2>
+                <input type="text" id="register-username" placeholder="Username">
+                <input type="password" id="register-password" placeholder="Password">
+                <button onclick="register()">Register</button>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+
+        <!-- Anime Tracker Section (Hidden by default) -->
+        <div id="tracker-section" style="display: none;">
+            <h2>Welcome, <span id="username-display"></span>!</h2>
+            <div id="search-section">
+                <input type="text" id="search-anime" placeholder="Search Anime">
+                <button onclick="searchAnime()">Search</button>
+            </div>
+            <div id="anime-results"></div>
+            <div id="anime-lists">
+                <h3>Your Lists</h3>
+                <div id="watching-list">
+                    <h4>Watching</h4>
+                    <ul></ul>
+                </div>
+                <div id="to-watch-list">
+                    <h4>To Watch</h4>
+                    <ul></ul>
+                </div>
+                <div id="dropped-list">
+                    <h4>Dropped</h4>
+                    <ul></ul>
+                </div>
+                <div id="boring-list">
+                    <h4>Boring</h4>
+                    <ul></ul>
+                </div>
+            </div>
+            <button onclick="exportData()">Export Data</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
